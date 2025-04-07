@@ -30,7 +30,7 @@ Add Facelytical to your `pubspec.yaml`:
 dependencies:
   facelytical:
     git:
-      url: https://github.com/yourusername/facelytical.git
+      url: https://github.com/NightingaleNath/facelytical_flutter
       ref: main
 ```
 
@@ -40,7 +40,7 @@ Or use a specific version:
 dependencies:
   facelytical:
     git:
-      url: https://github.com/yourusername/facelytical.git
+      url: https://github.com/NightingaleNath/facelytical_flutter
       ref: v0.1.0
 ```
 
