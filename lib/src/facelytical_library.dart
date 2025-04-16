@@ -15,12 +15,16 @@ class FacelyticalLibrary {
     required Function(Exception) onCaptureError,
     required VoidCallback onPermissionDenied,
     VoidCallback? onBackPressed,
+    Function(bool)? onSupportTapped,
+    bool showSupportText = true,
   }) {
     return FaceCaptureScreen(
       onImageCaptured: onImageCaptured,
       onCaptureError: onCaptureError,
       onPermissionDenied: onPermissionDenied,
       onBackPressed: onBackPressed ?? () {},
+      onSupportTapped: onSupportTapped ?? (_) {},
+      showSupportText: showSupportText,
     );
   }
 }

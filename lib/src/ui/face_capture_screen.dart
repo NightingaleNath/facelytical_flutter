@@ -16,6 +16,8 @@ class FaceCaptureScreen extends StatefulWidget {
   final Function(Exception) onCaptureError;
   final VoidCallback onPermissionDenied;
   final VoidCallback onBackPressed;
+  final Function(bool) onSupportTapped;
+  final bool showSupportText;
 
   const FaceCaptureScreen({
     super.key,
@@ -23,6 +25,8 @@ class FaceCaptureScreen extends StatefulWidget {
     required this.onCaptureError,
     required this.onPermissionDenied,
     required this.onBackPressed,
+    required this.onSupportTapped,
+    this.showSupportText = true,
   });
 
   @override
@@ -366,7 +370,38 @@ class _FaceCaptureScreenState extends State<FaceCaptureScreen> {
                                   ],
                                 ),
                               ),
-
+                              // Support text button (conditionally shown)
+                              if (widget.showSupportText)
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      _cameraManager.dispose();
+                                      widget.onSupportTapped(true);
+                                    },
+                                    child: RichText(
+                                      textAlign: TextAlign.center,
+                                      text: const TextSpan(
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                        ),
+                                        children: [
+                                          TextSpan(
+                                            text:
+                                                "Can't access the front Camera?\n",
+                                          ),
+                                          TextSpan(
+                                            text: "Customer Support",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               const SizedBox(height: 20),
                             ],
                           ),
