@@ -389,10 +389,10 @@ class _FaceCaptureScreenState extends State<FaceCaptureScreen> {
                                         children: [
                                           TextSpan(
                                             text:
-                                                "Can't access the front Camera?\n",
+                                                "Verification challenges?\n",
                                           ),
                                           TextSpan(
-                                            text: "Customer Support",
+                                            text: "Contact Support",
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                             ),
